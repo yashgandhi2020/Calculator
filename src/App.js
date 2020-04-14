@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Row from "./row";
+import "./App.css";
 
 function App() {
+  const r0 = ["D", "%", "x^2", "/"];
+  const r1 = ["7", "8", "9", "*"];
+  const r2 = ["4", "5", "6", "-"];
+  const r3 = ["1", "2", "3", "+"];
+  const r4 = ["C", "0", ".", "="];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className="calculator">
+        <div
+          className="row screen"
+          style={{
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          <h1>Calculator</h1>
+        </div>
+        <div className="row scal screen">
+          <h1 id="cal">0</h1>
+        </div>
+        <Row className="btn" value={r0} />
+        <Row className="btn" value={r1} />
+        <Row className="btn" value={r2} />
+        <Row className="btn" value={r3} />
+        <Row className="btn" value={r4} />
+      </div>
     </div>
   );
 }
